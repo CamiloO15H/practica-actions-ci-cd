@@ -28,6 +28,11 @@ jobs:
       - name: Build page
         run: npm run build
 
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public/
+
   deploy:
     if: ${{ always() }}  #And failure & success, also always. This 3 aplicattions are esencials for if conditional
     runs-on: ubuntu-latest
