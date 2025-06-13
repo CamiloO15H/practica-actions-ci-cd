@@ -1,4 +1,4 @@
-name: deploy
+name: Deploy
 
 on: push
 
@@ -19,10 +19,10 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Instalar dependencia
+      - name: Instalar dependencias
         run: npm install
 
-      - name: run test
+      - name: Run test
         run: npm run test 
 
       - name: Build page
@@ -48,5 +48,5 @@ jobs:
     steps:
       - name: Deploy
         id: deployment-pages
-        run: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4
           
